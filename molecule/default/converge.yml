@@ -1,0 +1,11 @@
+---
+- name: Converge
+  hosts: all
+  tasks:
+    - name: "Include fedora_nfs_mount"
+      include_role:
+        name: "fedora_nfs_mount"
+      vars:
+        fnm_server: quga.lan
+        fnm_export: /volume1/nfs-test
+        fnm_mnt_path: /mnt/test

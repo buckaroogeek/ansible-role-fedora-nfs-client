@@ -1,0 +1,31 @@
+---
+dependency:
+  name: galaxy
+driver:
+  name: podman
+platforms:
+  - name: f2
+    image: localhost/fedora-init:latest
+    tmpfs:
+      - /run
+      - /tmp
+    volumes:
+      - /sys/fs/cgroup:/sys/fs/cgroup:ro
+    capabilities:
+      - SYS_ADMIN
+    command: "/usr/sbin/init"
+    pre_build_image: true
+provisioner:
+  name: ansible
+  defaults:
+    interpreter_python: auto_silent
+  ssh_connection:
+    pipelining: false
+  log: true
+verifier:
+  name: ansible
+lint: |
+  set -e
+  yamllint .
+  ansible-lint .
+...
