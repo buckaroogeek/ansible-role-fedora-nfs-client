@@ -1,0 +1,8 @@
+---
+# handlers file for fedora_nfs_mount
+
+# reload systemd daemon - this creates new unit files for changes to fstab
+- name: Reload systemd
+  ansible.builtin.systemd:
+    daemon_reload: true
+...

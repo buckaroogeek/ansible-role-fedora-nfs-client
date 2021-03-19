@@ -1,0 +1,43 @@
+---
+# tasks file for fedora_nfs_mount
+#
+
+# NFS client is installed
+- name: NFS client is available
+  ansible.builtin.package:
+    name: "{{ fnm_package }}"
+    state: present
+
+# Sanity checks
+#
+- name: Hostname Sanity Check
+  fail: msg="fnm_server (nfs server host name) is not set"
+  when: fnm_server is undefined
+
+- name: NFS Export Sanity Check
+  fail: msg="fnm_export (nfs export) is not set"
+  when: fnm_export is undefined
+
+- name: Mount Point Sanity Check
+  fail: msg="fnm_mnt_path (nfs mount point on client) is not set"
+  when: fnm_mnt_path is undefined
+
+- name: FSTab Options Check
+  debug:
+    msg: "FSTab Options: {{ fnm_options | default( fnm_default_options ) }}"
+
+- name: State Options Check
+  debug:
+    msg: "State Setting: {{ fnm_state | default( fnm_default_state ) }}"
+
+# Add nfs configuration to /etc/fstab
+- name: Mount NFS
+  ansible.posix.mount:
+    src: "{{ fnm_server }}:{{ fnm_export }}"
+    path: "{{ fnm_mnt_path }}"
+    opts: "{{ fnm_options | default( fnm_default_options ) }}"
+    state: "{{ fnm_state | default( fnm_default_state ) }}"
+    fstype: nfs
+  notify:
+    - Reload systemd
+...

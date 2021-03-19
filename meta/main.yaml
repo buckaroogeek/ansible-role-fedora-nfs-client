@@ -1,0 +1,20 @@
+galaxy_info:
+  author: Brad Smith
+  description: Author
+  company: SageCreek Software
+
+  license: license (MIT)
+
+  min_ansible_version: 2.1
+
+  platforms:
+   - name: Fedora
+     versions:
+      - 33
+
+  galaxy_tags:
+    - fedora
+    - nfs
+    - mount
+
+dependencies: []

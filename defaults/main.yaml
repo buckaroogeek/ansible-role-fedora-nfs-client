@@ -1,0 +1,14 @@
+---
+# defaults file for fedora_nfs_mount
+
+# the follow ing variables need to be defined as parameters
+# to the role
+# fnm_server: the  NFS server hostname
+# fnm_export: the NFS export path on the server
+# fnm_mnt_path: mount point for NFS share
+
+# Optional parameters for the role include (see ./var/main.yaml):
+# fnm_options
+# fnm_state
+
+...
