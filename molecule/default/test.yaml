@@ -11,3 +11,4 @@
         fnm_export: /volume1/nfs-test
         fnm_mnt_path: /mnt/test
         fnm_state: absent
+...
