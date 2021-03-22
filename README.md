@@ -38,7 +38,7 @@ Dependencies
 
 None at this time.
 
-Example Playbook
+Example Playbooks
 ----------------
 The following playbook attaches the `/volume1/nfs-test` NFS share on the client at the `/mnt/test` location. Systemd unit files to persist the attachment across rebootsare automatically created and enabled. By default, the NFS share is only attached when in use. The three mandatory parameters are defined but not the two optional parameters.
 
@@ -95,4 +95,5 @@ Author Information
 ------------------
 
 Author: Brad Smith
+
 email: bradley.g.smith@gmail.com
