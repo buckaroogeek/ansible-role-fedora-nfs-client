@@ -11,7 +11,7 @@ An existing NFS share on a remote NFS server with appropriate security configura
 Role Variables
 --------------
 
-The following three (3) variables are required parameters that need to be defined as `vars` when this role is instantiated in a play or task. They are also listed, but not defined, in `./defaults/main.yaml`:
+The following three (3) variables are required parameters that need to be defined as `vars` when this role is instantiated in a play or task. They are also listed, but not defined, in `./defaults/main.yaml`):
 
 | Variable       | Notes      |
 | -------        | ----       |
