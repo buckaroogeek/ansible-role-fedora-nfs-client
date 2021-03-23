@@ -11,7 +11,7 @@ An existing NFS share on a remote NFS server with appropriate security configura
 Role Variables
 --------------
 
-The following three (3) variables are required parameters that need to be defined as `vars` when this role is instantiated in a play or task. They are also listed, but not defined, in `.\defaults\main.yaml`:
+The following three (3) variables are required parameters that need to be defined as `vars` when this role is instantiated in a play or task. They are also listed, but not defined, in `./defaults/main.yaml`:
 
 | Variable       | Notes      |
 | -------        | ----       |
@@ -19,11 +19,11 @@ The following three (3) variables are required parameters that need to be define
 | fnm_export | Export path on NFS server |
 | fnm_mnt_path | Client filesystem location |
 
-The following two (2) variables are optional parameters with default values that can alse be passed to the role:
+The following two (2) variables are optional parameters with default values that can alse be passed to the role (see `./defaults/main.yaml`:
 
 | Variable       | Default Value | Notes      |
 | -------        | ------------- | ----       |
-| fnm_options |see ./var/main.yaml  | See https://www.freedesktop.org/software/systemd/man/systemd.mount.html for detailed explanations of all options. |
+| fnm_options |see ./defaults/main.yaml  | See https://www.freedesktop.org/software/systemd/man/systemd.mount.html for detailed explanations of all options. |
 | fnm_state | `mounted`      | options are absent, mounted, present, unmounted, remounted. See https://docs.ansible.com/ansible/latest/collections/ansible/posix/mount_module.html for definitions of each state. |
  
 The following variables are defined in `.\vars\main.yaml` and are not intended to be configurable at runtime:
