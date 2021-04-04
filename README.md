@@ -1,4 +1,4 @@
-Fedora NFS Attach Ansible Role
+Fedora NFS Client Ansible Role
 =========
 
 An ansible role that attaches an NFS file share at a designated filesystem location on Fedora (v33 or newer) using /etc/fstab (via ansible.posix.mount) and systemd. The NFS client package is installed if not present. The target client ecosystem is Fedora running on hardware or in VMs. This role is not designed for attaching NFS directly to a container-based application.
